@@ -2,71 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 app.use(express.json());
-/*
-const min = 1;
-const numerosCarton = 10;
-let cartones = [];
-let numerosSacados = [];
-let ganadores = [];
 
-app.use(express.json());
-
-function NumeroAleatorio(max){
-    return Math.floor(Math.random() * (max - 1)) + 1;
-}
-
-
-function crearCartones(num){
-    let funciono = -1, numAleatorio, a, cantidad;
-    for (let i = 0; i < num; i++) {
-        let carton = {
-            id: i,
-            nombre: null,
-            valores: [],
-        }
-        a = 0
-        while(a < numerosCarton) {
-            numAleatorio = NumeroAleatorio()
-            b = 0
-            while(b < i){ // Este while verifica que el numero aleatorio no este ya en el carton
-                if(cartones[i].valores[b] == numAleatorio){
-                    b = i + 1
-                }
-                b++
-            }
-            if(b != i+2){ // si el numero aleatorio no esta en el carton, lo agrega, en caso contrario no hace nada
-                carton.valores.push(numAleatorio)
-                a++
-            }
-        }
-        cartones.push(carton)
-    }
-    cantidad = cartones[NumeroAleatorio(num)].valores.length // linea para verificar que la funcion funcione correctamente
-    if(cantidad != numerosCarton){
-        funciono = 1 // ERROR CODE 1
-    }
-    return funciono;
-}
-
-function iniciarJuego(num){
-    if(max == -1){
-        max = 99
-    }
-    let funciono = crearCartones(num);
-    return funciono;
-}
-    function obtenerCarton(nombre){
-        let faltaEncontrar = true, cartonRandom;
-        while(faltaEncontrar){ //busca un carton al azar el cual no pertenezca a ninguna persona
-            cartonRandom = NumeroAleatorio(carton.length);
-            if(carton[cartonRandom].nombre == null){
-                faltaEncontrar = false;
-            }
-        }
-        cartones[cartonRandom].nombre = nombre
-        return cartones[cartonRandom].valores;
-    }
-*/
     function NumeroAleatorio(max){
         return Math.floor(Math.random() * (max - 1)) + 1;
     }
