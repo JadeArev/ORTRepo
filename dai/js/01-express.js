@@ -55,16 +55,19 @@ app.use(express.json());
     }
     let numerosSacados = [];
 
-    function sacarNumero(num){
+    function sacarNumero(){
         let numeroRandom = NumeroAleatorio(10);
         numerosSacados.push(numeroRandom);
+        return numerosSacados;
+    }
         cartones.forEach(c => {
+           let numero= sacarNumero(numerosSacados);
             for (let i = 0; i > c.valores; i++) {
-                if (c.valores[i] = numeroRandom){
+                if (c.valores[i] = numerosSacados){
                     c.valores[i].pop;
                 }
             } 
-        }}
+        })
 
     app.post('/numero_aleatorio', (req, res)=>{
     
