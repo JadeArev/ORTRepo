@@ -7,7 +7,7 @@ app.use(express.json());
         return Math.floor(Math.random() * (max - 1)) + 1;
     }
 
-    let cartones = []
+    let cartones = [];
 
     function crearCarton(){
         let carton = {
@@ -35,14 +35,19 @@ app.use(express.json());
         return crearCartones(num);
     }
 
+    let nombres = [];
     function obtenerCarton(nombre){
+        nombres.push(nombre);
         for (let index = 0; index < cartones.length; index++) {
-            cartones[index].nombre = nombre;
+            if (cartones[index].carton.nombre = nombres[index]){
+                return cartones[index].carton.valores;
+            } 
+            else{
+                return -1; 
+            }
+            
         }
-        while(nombre.carton = "" ){
-            carton == nombre;
-        }
-        return cartones;
+
     }
 
     function devolverCartones(nombre){
@@ -55,19 +60,23 @@ app.use(express.json());
     }
     let numerosSacados = [];
 
-    function sacarNumero(){
-        let numeroRandom = NumeroAleatorio(10);
+    function sacarNumero(num){
+        let numeroRandom = NumeroAleatorio(num);
         numerosSacados.push(numeroRandom);
-        return numerosSacados;
-    }
         cartones.forEach(c => {
-           let numero= sacarNumero(numerosSacados);
-            for (let i = 0; i > c.valores; i++) {
-                if (c.valores[i] = numerosSacados){
-                    c.valores[i].pop;
-                }
-            } 
-        })
+             for (let i = 0; i > c.valores; i++) {
+                 if (c.carton.valores[i] = numerosSacados[i]){
+                     c.carton.valores[i].pop;
+                     return numerosSacados;
+                 }
+                 else {
+                     return -1;
+                 }
+             } 
+         })
+    }
+
+       
 
     app.post('/numero_aleatorio', (req, res)=>{
     
@@ -89,8 +98,7 @@ app.use(express.json());
     })
 
     app.get('/obtener_Carton', (req, res)=>{
-   
-        console.log(req.body.nombre);    
+        console.log(req.body.nombre); 
          let s = obtenerCarton(req.body.nombre);    
          res.send(s);
        
@@ -103,7 +111,11 @@ app.use(express.json());
         res.send(cartonesAMostrar);
     })
 
-
+    app.get('/sacar_numero', (req, res)=> {
+        console.log(req.body.numero);
+        let sacarNumeros = sacarNumero(req.body.numero);
+        res.send(sacarNumeros);
+    })
     app.listen(port, () => {
         console.log(`example app listening on port ${port}`);
     });
