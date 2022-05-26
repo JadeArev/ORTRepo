@@ -1,5 +1,5 @@
 {
-  "name": "ORTRepo",
+  "name": "ortrepo",
   "version": "1.0.0",
   "description": "\"# ORTRepo\" \r \"# ORTRepo\"",
   "main": "index.js",
@@ -19,5 +19,6 @@
   "homepage": "https://github.com/JadeLaJefa/ORTRepo#readme",
   "dependencies": {
     "express": "^4.17.3"
-  }
+  },
+  "devDependencies": {}
 }
