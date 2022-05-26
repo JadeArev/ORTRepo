@@ -2,6 +2,7 @@
 
 let x = 20;
 let y = 15;
+let pi = 3.14159;
 
 const Sumar = (x,y) => {
 
@@ -23,3 +24,5 @@ const Dividir = (x,y) => {
 
     console.log(x/y);
 }
+
+export{Sumar, Restar, Multiplicar, Dividir};
