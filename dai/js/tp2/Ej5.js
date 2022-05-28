@@ -1,4 +1,4 @@
-/*La funcion parsearUrl la usamos en el ejercicio 6*/ 
+
 var url = 
 "http://www.ort.edu.ar:8080/alumnos/index.htm?curso=2022&mes=mayo";
 
